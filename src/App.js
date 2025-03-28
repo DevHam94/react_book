@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, Component } from 'react';
+import Link from "./Link";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const link1 = React.createElement(Link, {
+      framework: "React",
+      url: "//react.dev",
+    });
+    const link2 = React.createElement(Link, {
+      framework: "Vue",
+      url: "//vuejs.org",
+    });
+    const link3 = React.createElement(Link, {
+      framework: "Angular",
+      url: "//angular.io",
+    });
+    return React.createElement(Fragment, null, link1, link2, link3);
+  }
 }
 
 export default App;
